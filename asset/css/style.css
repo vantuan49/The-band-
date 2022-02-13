@@ -47,10 +47,6 @@ html{
 }
 
 
-#main{
- 
-}
-
 #header{
      height: 46px;
      background-color: #000;
@@ -151,12 +147,46 @@ html{
 .slider{
     /* đưa slider xuống dưới thanhn header */
  margin-top: 46px;
- /* set chiều cao cho bức ảnh( bằng 50% chiều rộng) */
- padding-top: 50%;
- background: url('/asset/img/chicago.jpg') top center;
+  /* set chiều cao cho bức ảnh( bằng 50% chiều rộng) */
+  padding-top: 50%; 
+  background: url("/asset/img/img1.jpg") top center;
  background-repeat: no-repeat;
- background-size: cover ;
+ background-size: cover ; 
  position: relative;
+ animation: slideShow 20s infinite;
+}
+
+@keyframes slideShow {
+   
+    25%{
+        background: url("/asset/img/img1.jpg") top center;
+        background-repeat: no-repeat;
+        background-size: cover ;
+    }
+    50%{
+        background: url("/asset/img/img8.jpg") top center;
+        background-repeat: no-repeat;
+        background-size: cover ;
+    }
+    75%{
+        background: url("/asset/img/img9.jpg") top center;
+        background-repeat: no-repeat;
+        background-size: cover ;
+    }
+    100%{
+        background: url("/asset/img/img10.jpg") top center;
+        background-repeat: no-repeat;
+        background-size: cover ;
+    }
+     0%{
+        background: url("/asset/img/img1.jpg") top center;
+        background-repeat: no-repeat;
+        background-size: cover ;
+    }
+}
+.slider-img img{
+    width:100%;
+    
 }
 .slider .text-content{
      color: white;
@@ -169,6 +199,7 @@ html{
     transform: translateX(-50%);
     /* căn giữa cho chữ  */
     text-align: center;
+    text-shadow: 0 0 2px black;
    
     
 }
@@ -180,13 +211,10 @@ html{
 .slider .text-desciption{
     /* tạp khoảng cách giữa .text-heading và  .text-desciption  */
          margin-top: 25px;
-}
-
-.content{
-   
-
 
 }
+
+
 .content-section{
     width: 800px;
     max-width: 100%;
@@ -290,12 +318,7 @@ html{
    
 
 }
-.places-item{
-   
-    /* width: calc(100%/3); */
-    
-   
-}
+
 .places-img{
     width: 100%;
     display: block;
@@ -383,9 +406,7 @@ html{
     padding: 64px 16px;
     text-align: center;
 }
-.footer-section{
-    
-}
+
 
 .social-contact a{
     font-size: 24px;
@@ -437,7 +458,7 @@ html{
 .modal-header{
     background-color:#009688 ;
     color: white;
-    height: 130px;
+    height: 70px;
     font-size: 30px;
     /* Tọa khoảng cách giữa các chữ cái */
     letter-spacing: 5px;
@@ -483,7 +504,7 @@ html{
     cursor: pointer;
     font-size: 15px;
     margin: 16px 0;
-    padding: 16px;
+    padding: 10px;
     width: 100%;
 }
 #pay-btn:hover{
@@ -491,12 +512,10 @@ html{
     color: black;
 }
 .modal-footer{
-    padding: 16px;
+    padding: 10px;
     text-align: right;
 }
-.modal-help{
-    
-}
+
 
 @keyframes modalFadeIn{
     from {
@@ -507,4 +526,134 @@ html{
         opacity: 1;
           transform: translateY(0px);
     }
+}
+
+/* Responsive */
+/* PC */
+@media (min-width: 1024px ){
+  
+    /* ẩn nút menu khi đang trên pc */
+    .menu-mobile-btn{
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    /* ẩn nút menu khi đang trên tablet */
+    .menu-mobile-btn{
+        display: none;
+   
+    }
+}
+/* Mobile */
+@media (max-width: 739px){
+        #header{
+            overflow: hidden;
+        }
+         #nav{
+             display: block; 
+          } 
+          #nav .subnav {
+              /* hiện phần subnav ở mobile */
+            position: initial;
+            background-color:#333 ;
+        }
+        #nav .subnav li{
+            padding: 2px 41px;
+        }
+        #nav .subnav a{
+            color: white;
+        }
+         #nav li{
+                 display: block;
+         }
+         /* Slider */
+         
+         .slider .text-desciption{
+             margin-top: 10px;
+             font-size: 9px;
+         }
+         
+         .search-btn{
+             display: none;
+         }
+         /* làm nút menu thay cho nút search  */
+         .menu-mobile-btn{
+             display: inline;
+             float: right; 
+             line-height: 46px;
+             color: white;
+             position: absolute;
+             top: 0;
+             right: 0;
+             /* hiện nút menu trên mobile */
+             display: block;
+         }
+         .menu-icon{
+            padding: 12px 24px;
+         }
+         .menu-mobile-btn:hover{
+             background-color: #ccc;
+             color: black;
+         }
+         /* content section */
+         
+         /* member list */
+         .content .member-item{
+             /* làm cho các ảnh member nằm thành 1 hàng dọc  */
+             width: 100%;
+         }
+         .places-item {
+             /* làm cho các place item nằm thành 1 hàng dọc */
+            width: 100%;
+            /* tọa khoảng cách giữa các place item */
+            margin: 16px 0;
+         }
+         .member-item .name{
+             /* Tọa khoảng cách giữa các tên  */
+             margin: 15px 0px;
+         }
+         .buyticket-btn {
+             /* phóng to nút buytickets để ng dùng dễ sử dụng */
+            padding: 19px 19px ;
+            /* làm cho nút buy dài ra để dễ sử dụng */
+            width: 100%;
+         }
+         /* contact */
+         .col{
+             float: none;
+         }
+         .contact-content {
+             padding-top: 60px;
+         }
+         /* tọa khoảng cách phía dưới(cách 16px với contact form submit) contact info */
+         .contact-info {
+            margin-bottom: 16px;
+         }
+         /* thay width:100% vào để làm cho các form submit có độ rộng bằng 100% vs trình duyệt */
+         .col-hafl {
+            width: 100%;
+         }
+         .contact-form form{
+             margin-top: 40px;
+         }
+         .contact-form .form-control {
+             padding: 15px;
+         }
+         .submit-btn{
+             /* làm cho nút submit dài ra bằng vs trình duyệt */
+             width: 100%;
+             /* phóng to nút submit đễ ng dùng dễ sử dụng */
+             padding: 16px 16px;
+             -webkit-appearance: none;
+         }
+         .social-contact a {
+             /* phóng to các icon ở footer lên để cho người dùng dễ sử dụng */
+            font-size: 30px;
+         }
+         
+         
+         
+
 }
