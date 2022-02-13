@@ -147,41 +147,12 @@ html{
 .slider{
     /* đưa slider xuống dưới thanhn header */
  margin-top: 46px;
-  /* set chiều cao cho bức ảnh( bằng 50% chiều rộng) */
-  padding-top: 50%; 
+ /* set chiều cao cho bức ảnh( bằng 50% chiều rộng) */
+ /* padding-top: 50%; */
+ /* background: url("/asset/img/img1.jpg") top center;
  background-repeat: no-repeat;
- background-size: cover ; 
+ background-size: cover ; */
  position: relative;
- animation: slideShow 10s infinite;
-}
-
-@keyframes slideShow {
-    0%{
-        background: url("../img/img1.jpg") top center;
-        background-repeat: no-repeat;
-        background-size: cover ;
-    }
-    25%{
-        background: url("../img/img1.jpg") top center;
-        background-repeat: no-repeat;
-        background-size: cover ;
-    }
-    50%{
-        background: url("../img/img8.jpg") top center;
-        background-repeat: no-repeat;
-        background-size: cover ;
-    }
-    75%{
-        background: url("../img/img9.jpg") top center;
-        background-repeat: no-repeat;
-        background-size: cover ;
-    }
-    100%{
-        background: url("../img/img10.jpg") top center;
-        background-repeat: no-repeat;
-        background-size: cover ;
-    }
-    
 }
 .slider-img img{
     width:100%;
@@ -198,7 +169,6 @@ html{
     transform: translateX(-50%);
     /* căn giữa cho chữ  */
     text-align: center;
-    text-shadow: 0 0 2px black;
    
     
 }
@@ -546,7 +516,7 @@ html{
     }
 }
 /* Mobile */
-@media (max-width: 739px){
+@media (max-width: 740px){
         #header{
             overflow: hidden;
         }
@@ -616,8 +586,6 @@ html{
          .buyticket-btn {
              /* phóng to nút buytickets để ng dùng dễ sử dụng */
             padding: 19px 19px ;
-            /* làm cho nút buy dài ra để dễ sử dụng */
-            width: 100%;
          }
          /* contact */
          .col{
@@ -645,7 +613,6 @@ html{
              width: 100%;
              /* phóng to nút submit đễ ng dùng dễ sử dụng */
              padding: 16px 16px;
-             -webkit-appearance: none;
          }
          .social-contact a {
              /* phóng to các icon ở footer lên để cho người dùng dễ sử dụng */
